@@ -36,6 +36,7 @@ spring:
     serialization:
       indent-output: true
   datasource:
+    driverClassName: org.h2.Driver
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:file:./target/h2db/db/rabitmqexample;DB_CLOSE_DELAY=-1
     username: rabitmqexample
@@ -61,7 +62,16 @@ spring:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:
     cache: false
-
+  rabbitmq:
+    #virtual-host: 35f9c4c2-dd75-4911-8676-cc446bf1eeaf.4b2136ddd30a46e9b7bdb2b2db7f8cd0.databases.appdomain.cloud
+    ssl:
+      enabled: true
+      validate-server-certificate: false
+      verify-hostname: false
+    host: 35f9c4c2-dd75-4911-8676-cc446bf1eeaf.4b2136ddd30a46e9b7bdb2b2db7f8cd0.databases.appdomain.cloud
+    port: 31886
+    username: ibm_cloud_99e0d9f2_3a79_4a76_a7f1_1fc3c34a1451
+    password: 1601f9b168d2cd1ef29ec7995889a4ef300b5c108a662b9ab2ba2b6fa30caa66
 server:
   port: 8080
 
